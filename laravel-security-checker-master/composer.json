@@ -1,0 +1,60 @@
+{
+  "name": "jorijn/laravel-security-checker",
+  "description": "Added Laravel functionality to SensioLabs Security Checker. Adds a command to check for, and optionally emails you, vulnerabilities when they affect you.",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "security",
+    "composer",
+    "dependencies"
+  ],
+  "authors": [
+    {
+      "name": "Jorijn Schrijvershof",
+      "email": "jorijn@jorijn.com"
+    }
+  ],
+  "require": {
+    "sensiolabs/security-checker": "^5.0.0",
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "illuminate/console": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "illuminate/mail": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "laravel/framework": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "illuminate/config": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "illuminate/view": "5.5.x|5.6.x|5.7.x|5.8.x",
+    "phpunit/phpunit": "~6.0",
+    "scrutinizer/ocular": "~1.1",
+    "squizlabs/php_codesniffer": "~2.3",
+    "orchestra/testbench": "3.5.x|3.6.x|3.7.x|3.8.x",
+    "mockery/mockery": "^1.2"
+  },
+  "suggest": {
+    "laravel/slack-notification-channel": "In Laravel 5.8 they extracted the Slack notification channel into a first-party package. If you run 5.8, you will need to install this package too."
+  },
+  "autoload": {
+    "psr-4": {
+      "Jorijn\\LaravelSecurityChecker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Jorijn\\LaravelSecurityChecker\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "cs": "phpcs --standard=psr2 src/"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jorijn\\LaravelSecurityChecker\\ServiceProvider"
+      ]
+    }
+  }
+}
